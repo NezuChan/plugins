@@ -1,3 +1,5 @@
+import "./index";
+
 import { FrameworkClient, Plugin, postInitialization, ClientOptions, preLogin } from "@nezuchan/framework";
 import fastify from "fastify";
 import { container } from "@sapphire/pieces";
