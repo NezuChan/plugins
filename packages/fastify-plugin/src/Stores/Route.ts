@@ -21,7 +21,7 @@ export abstract class Route extends Piece<RouteOptions> {
                 const result = await Result.fromAsync<unknown, ApiError>(() => this.run(req, res));
                 if (result.isErr()) {
                     const error = result.unwrapErr();
-                    return res.code(error.code ?? 500).send({ message: error.message, cause: error.cause });
+                    return res.code(error.statusCode ?? 500).send({ statusCode: error.statusCode, message: error.message, cause: error.cause });
                 }
                 if (result.isOkAnd(value => typeof value === "object")) return result.unwrap();
             },
@@ -29,13 +29,13 @@ export abstract class Route extends Piece<RouteOptions> {
                 const global = await this.container.stores.get("pre-handlers").run(req, res, this);
                 if (global.isErr()) {
                     const error = global.unwrapErr();
-                    return res.code(error.code ?? 500).send({ message: error.message, cause: error.cause });
+                    return res.code(error.statusCode ?? 500).send({ statusCode: error.statusCode, message: error.message, cause: error.cause });
                 }
 
                 const result = await this.prehandlers.run(req, res, this);
                 if (result.isErr()) {
                     const error = result.unwrapErr();
-                    return res.code(error.code ?? 500).send({ message: error.message, cause: error.cause });
+                    return res.code(error.statusCode ?? 500).send({ statusCode: error.statusCode, message: error.message, cause: error.cause });
                 }
             },
             schema: this.options.schema

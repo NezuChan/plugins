@@ -59,7 +59,9 @@
       "plugin:@typescript-eslint/recommended",
       "@hazmi35/eslint-config/typescript"
     ],
-    "rules": {}
+    "rules": {
+      "@typescript-eslint/no-unsafe-argument": "off"
+    }
   },
   "dependencies": {
     "@discordjs/collection": "^1.5.1",
