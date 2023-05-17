@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.3](https://github.com/NezuChan/plugins/compare/@nezuchan/fastify-plugin@0.1.2...@nezuchan/fastify-plugin@0.1.3) (2023-05-17)
+
+
+### Bug Fixes
+
+* listen app post login ([4bfb752](https://github.com/NezuChan/plugins/commit/4bfb752361429e7fb35a8d1a175c4b8f2c6a93b1))
+
+
+
+
+
 ## [0.1.2](https://github.com/NezuChan/plugins/compare/@nezuchan/fastify-plugin@0.1.1...@nezuchan/fastify-plugin@0.1.2) (2023-05-17)
 
 
