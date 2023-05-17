@@ -1,18 +1,18 @@
 {
   "name": "@nezuchan/fastify-plugin",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A Fastify API Plugins for NezuChan Framework",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-			"import": "./dist/index.js",
-			"types": "./dist/index.d.ts"
-		},
-		"./register": {
-			"import": "./register.js",
-			"types": "./register.d.ts"
-		}
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./register": {
+      "import": "./register.js",
+      "types": "./register.d.ts"
+    }
   },
   "files": [
     "dist",
