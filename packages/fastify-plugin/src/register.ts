@@ -1,4 +1,4 @@
-import "./index";
+import "./index.js";
 
 import { FrameworkClient, Plugin, postInitialization, ClientOptions, preLogin } from "@nezuchan/framework";
 import fastify from "fastify";
