@@ -1,6 +1,6 @@
 import "./index.js";
 
-import { FrameworkClient, Plugin, postInitialization, ClientOptions, preLogin } from "@nezuchan/framework";
+import { FrameworkClient, Plugin, postInitialization, ClientOptions, postLogin } from "@nezuchan/framework";
 import fastify from "fastify";
 import { container } from "@sapphire/pieces";
 import middie from "@fastify/middie";
@@ -15,11 +15,11 @@ export class Api extends Plugin {
         container.server = this.server;
     }
 
-    public static async [preLogin](this: FrameworkClient): Promise<void> {
+    public static async [postLogin](this: FrameworkClient): Promise<void> {
         await this.server.register(middie);
         await this.server.listen({ port: this.options.api?.port ?? 3000, host: this.options.api?.host ?? "localhost" });
     }
 }
 
 FrameworkClient.plugins.registerPostInitializationHook(Api[postInitialization], "API-PostInitialization");
-FrameworkClient.plugins.registerPreLoginHook(Api[preLogin], "API-PreLogin");
+FrameworkClient.plugins.registerPostLoginHook(Api[postLogin], "API-PostLogin");
