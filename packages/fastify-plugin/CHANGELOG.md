@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.4](https://github.com/NezuChan/plugins/compare/@nezuchan/fastify-plugin@0.1.3...@nezuchan/fastify-plugin@0.1.4) (2023-05-17)
+
+
+### Bug Fixes
+
+* properly handle prehandlers ([c68651d](https://github.com/NezuChan/plugins/commit/c68651de344a45a061d03476b66e48b3ee9d00d0))
+
+
+
+
+
 ## [0.1.3](https://github.com/NezuChan/plugins/compare/@nezuchan/fastify-plugin@0.1.2...@nezuchan/fastify-plugin@0.1.3) (2023-05-17)
 
 
