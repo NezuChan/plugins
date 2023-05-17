@@ -3,12 +3,14 @@ import { HTTPMethods, FastifySchema, FastifyReply, FastifyRequest } from "fastif
 import { Awaitable } from "@sapphire/utilities";
 import { Result } from "@sapphire/result";
 import { ApiError } from "../Errors/ApiError.js";
-import { PrehandlerEntryResolvable } from "../Lib/Prehandlers/PrehandlerContainerArray.js";
+import { PrehandlerContainerArray, PrehandlerEntryResolvable } from "../Lib/Prehandlers/PrehandlerContainerArray.js";
 
 export abstract class Route extends Piece<RouteOptions> {
+    public prehandlers: PrehandlerContainerArray;
     public constructor(context: PieceContext, options: RouteOptions) {
         super(context, options);
         if (!this.options.name) this.options.name = `${this.options.method} ${this.options.path}`;
+        this.prehandlers = new PrehandlerContainerArray(options.preHandlers ?? []);
     }
 
     public onLoad(): unknown {
@@ -30,8 +32,8 @@ export abstract class Route extends Piece<RouteOptions> {
                     return res.code(error.code ?? 500).send({ message: error.message, cause: error.cause });
                 }
 
-                const result = await this.container.stores.get("pre-handlers").get(this.name)?.run(req, res, this);
-                if (result?.isErr()) {
+                const result = await this.prehandlers.run(req, res, this);
+                if (result.isErr()) {
                     const error = result.unwrapErr();
                     return res.code(error.code ?? 500).send({ message: error.message, cause: error.cause });
                 }
