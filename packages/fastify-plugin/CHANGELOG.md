@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.7](https://github.com/NezuChan/plugins/compare/@nezuchan/fastify-plugin@0.1.6...@nezuchan/fastify-plugin@0.1.7) (2023-05-18)
+
+
+### Bug Fixes
+
+* change github readme license location ([4eceb2f](https://github.com/NezuChan/plugins/commit/4eceb2f24fd13a20a16cfebaa5e303112f7e6e7a))
+
+
+### Features
+
+* tasker plugin ([c5a31cc](https://github.com/NezuChan/plugins/commit/c5a31cc267237cba2830743bed407fe5beb0c626))
+
+
+
+
+
 ## [0.1.6](https://github.com/NezuChan/plugins/compare/@nezuchan/fastify-plugin@0.1.5...@nezuchan/fastify-plugin@0.1.6) (2023-05-17)
 
 
