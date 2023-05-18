@@ -1,7 +1,7 @@
 {
-  "name": "@nezuchan/fastify-plugin",
-  "version": "0.1.6",
-  "description": "A Fastify API Plugins for NezuChan Framework",
+  "name": "@nezuchan/tasker-plugin",
+  "version": "0.0.0",
+  "description": "A Tasker Plugins for NezuChan Framework",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
@@ -30,7 +30,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint src --ext ts",
     "lint:fix": "eslint src --fix --ext ts",
-    "build": "rimraf dist && tsc"
+    "build": "swc src -d dist"
   },
   "type": "module",
   "author": "KagChi",
@@ -39,11 +39,12 @@
     "@hazmi35/eslint-config": "^9.0.0",
     "@swc/cli": "^0.1.62",
     "@swc/core": "^1.3.58",
+    "@types/amqplib": "^0.10.1",
     "@types/node": "^18.16.12",
     "@typescript-eslint/eslint-plugin": "^5.59.6",
     "@typescript-eslint/parser": "^5.59.6",
     "eslint": "^8.40.0",
-    "rimraf": "^5.0.1",
+    "rimraf": "^5.0.0",
     "typescript": "^5.0.4"
   },
   "eslintConfig": {
@@ -52,24 +53,19 @@
       "@typescript-eslint"
     ],
     "parserOptions": {
-      "project": "./tsconfig.eslint.json"
+      "project": "./tsconfig.json"
     },
     "extends": [
       "eslint:recommended",
       "plugin:@typescript-eslint/recommended",
       "@hazmi35/eslint-config/typescript"
     ],
-    "rules": {
-      "@typescript-eslint/no-unsafe-argument": "off"
-    }
+    "rules": {}
   },
   "dependencies": {
-    "@discordjs/collection": "^1.5.1",
-    "@fastify/middie": "^8.3.0",
     "@nezuchan/core": "^0.6.1",
     "@nezuchan/framework": "^0.6.1",
     "@sapphire/pieces": "^3.6.3",
-    "@sapphire/result": "^2.6.4",
-    "fastify": "^4.17.0"
+    "amqplib": "^0.10.3"
   }
 }
